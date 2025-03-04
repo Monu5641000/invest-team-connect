@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import IdeaCard from "@/components/IdeaCard";
@@ -146,7 +145,7 @@ const Ideas = () => {
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
+                <SelectItem value="all-categories">All Categories</SelectItem>
                 {uniqueCategories.map(category => (
                   <SelectItem key={category} value={category}>
                     {category}
