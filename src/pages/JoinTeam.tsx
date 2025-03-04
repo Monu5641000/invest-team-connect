@@ -82,7 +82,10 @@ const JoinTeam = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your application has been submitted!");
+      toast({
+        title: "Success",
+        description: "Your application has been submitted!",
+      });
       navigate("/ideas");
     }, 1500);
   };

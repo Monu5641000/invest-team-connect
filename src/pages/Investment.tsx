@@ -120,7 +120,10 @@ const Investment = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success(`Investment of $${investmentAmount.toLocaleString()} submitted!`);
+      toast({
+        title: "Investment Submitted",
+        description: `Investment of $${investmentAmount.toLocaleString()} submitted!`,
+      });
       navigate("/ideas");
     }, 1500);
   };

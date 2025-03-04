@@ -51,7 +51,10 @@ const PostIdea = () => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      toast.success("Your idea has been posted successfully!");
+      toast({
+        title: "Success",
+        description: "Your idea has been posted successfully!",
+      });
       navigate("/ideas");
     }, 1500);
   };
