@@ -5,7 +5,7 @@ import IdeaCard from "@/components/IdeaCard";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
-// Mock data
+// Mock data with more details and images
 const mockIdeas = [
   {
     id: "1",
@@ -14,9 +14,14 @@ const mockIdeas = [
     category: "AgTech",
     author: {
       name: "Sarah Chen",
-      avatar: "",
+      avatar: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=150&h=150&fit=crop",
     },
     createdAt: "2 days ago",
+    fundingNeeded: "$250,000",
+    requiredSkills: "Machine Learning Engineer, Backend Developer, AgTech Specialist",
+    targetAudience: "Small to medium-sized farms, Agricultural cooperatives",
+    problemStatement: "Traditional farming lacks precision in resource allocation, leading to waste and environmental damage.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
   },
   {
     id: "2",
@@ -25,9 +30,14 @@ const mockIdeas = [
     category: "HealthTech",
     author: {
       name: "Mark Johnson",
-      avatar: "",
+      avatar: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=150&h=150&fit=crop",
     },
     createdAt: "5 days ago",
+    fundingNeeded: "$500,000",
+    requiredSkills: "Blockchain Developer, UX Designer, Healthcare Consultant",
+    targetAudience: "Patients, Independent healthcare providers",
+    problemStatement: "Healthcare costs are inflated by middlemen, while patient data is often compromised.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&h=500&fit=crop",
   },
   {
     id: "3",
@@ -36,9 +46,14 @@ const mockIdeas = [
     category: "EdTech",
     author: {
       name: "Priya Patel",
-      avatar: "",
+      avatar: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=150&h=150&fit=crop",
     },
     createdAt: "1 week ago",
+    fundingNeeded: "$350,000",
+    requiredSkills: "VR Developer, 3D Modeler, Educational Content Designer",
+    targetAudience: "K-12 schools, Universities, Online education platforms",
+    problemStatement: "Abstract concepts are difficult to grasp through traditional teaching methods.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop",
   },
   {
     id: "4",
@@ -50,6 +65,11 @@ const mockIdeas = [
       avatar: "",
     },
     createdAt: "2 weeks ago",
+    fundingNeeded: "$175,000",
+    requiredSkills: "Material Scientist, Product Designer, Environmental Engineer",
+    targetAudience: "Environmentally conscious consumers, Outdoor enthusiasts",
+    problemStatement: "Microplastics are increasingly present in drinking water with potential health consequences.",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
   },
   {
     id: "5",
@@ -61,6 +81,11 @@ const mockIdeas = [
       avatar: "",
     },
     createdAt: "3 weeks ago",
+    fundingNeeded: "$400,000",
+    requiredSkills: "AI Engineer, Financial Analyst, Full Stack Developer",
+    targetAudience: "Middle-income individuals, Young professionals",
+    problemStatement: "Quality financial advice is only accessible to the wealthy, leaving most people underserved.",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=500&fit=crop",
   },
   {
     id: "6",
@@ -72,6 +97,11 @@ const mockIdeas = [
       avatar: "",
     },
     createdAt: "1 month ago",
+    fundingNeeded: "$300,000",
+    requiredSkills: "IoT Developer, Machine Learning Specialist, Electrical Engineer",
+    targetAudience: "Homeowners, Property management companies",
+    problemStatement: "Households waste significant energy due to inefficient usage patterns and lack of smart controls.",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=500&fit=crop",
   },
 ];
 
@@ -118,7 +148,9 @@ const Ideas = () => {
               <SelectContent>
                 <SelectItem value="">All Categories</SelectItem>
                 {uniqueCategories.map(category => (
-                  <SelectItem key={category} value={category}>{category}</SelectItem>
+                  <SelectItem key={category} value={category}>
+                    {category}
+                  </SelectItem>
                 ))}
               </SelectContent>
             </Select>
@@ -136,6 +168,11 @@ const Ideas = () => {
                 category={idea.category}
                 author={idea.author}
                 createdAt={idea.createdAt}
+                image={idea.image}
+                fundingNeeded={idea.fundingNeeded}
+                requiredSkills={idea.requiredSkills}
+                targetAudience={idea.targetAudience}
+                problemStatement={idea.problemStatement}
               />
             ))
           ) : (
